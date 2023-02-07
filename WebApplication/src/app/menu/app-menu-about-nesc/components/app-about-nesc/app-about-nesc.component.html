@@ -1,0 +1,117 @@
+<div class="container nesc-info-wrapper">
+  <div *ngIf="translate.currentLang == 'bg'">
+    <h1>
+      Какво е НЕСК?
+    </h1>
+    <hr>
+
+    <br />
+
+    <p>НЕСК е националната електронна студентска карта, с която се удостоверява статусът на действащ студент или
+      докторант
+      във висше училище или научна организация в Република България. Чрез НЕСК студентите и докторантите могат да
+      доказват
+      своя
+      статус пред висши училища, студентски столове, музеи, театри, БДЖ, градски транспорт и др.
+    </p>
+
+    <p>
+      НЕСК се издава за първи път на всеки действащ студент или докторант, въз основа на подадена информация за това към
+      НАЦИД
+      от съответното висше училище или научна организация. Студентът може да достъпи своята електронна карта веднага щом
+      активира профила си в портал „Национална електронна студентска карта". За активирането на профила НАЦИД изпраща
+      имейл на електронната поща на студента. В случай че студентът или докторантът не е получил автоматичен
+      активационен имейл, може да заяви такъв като използва <a routerLink="/access"
+         (click)="switchTabInAccess()">формата за регистрация</a>, достъпна
+      в менютата на портала.
+    </p>
+
+    <p>
+      Издаването, свалянето и използването на НЕСК е безплатно.
+    </p>
+
+    <p>
+      НЕСК е валидна за целия период на обучение на студента или докторанта и не се преиздава за всяка учебна година.
+      Преиздаване е необходимо само при настъпили промени на данните в НЕСК – например при смяна на фамилно име на
+      студента.
+    </p>
+
+    <p>
+      Електронната карта може да бъде свалена като pdf – документ или да се показва директно от мобилното устройство,
+      през
+      което студентът или докторантът е влязъл в своя профил в този портал.
+    </p>
+
+    <p>Студент или докторант, който няма статус „Действащ“, не може да достъпи и свали НЕСК от своя профил в портала.
+    </p>
+
+    <picture>
+      <img src="../../../../../assets/about-nesc-bg.png"
+           style="width:500px;height:300px;"
+           class="center">
+    </picture>
+
+    <p>
+      При сканиране на QR кода на картата или въвеждане на ЕАН, порталът извежда актуална информация от Регистъра на
+      всички действащи, прекъснали и завършили студенти и докторанти (РДПЗСД) относно статуса на
+      студента или докторанта, включително относно специалността и висшето училище, в което той се обучава.
+    </p>
+
+  </div>
+
+  <div *ngIf="translate.currentLang == 'en'">
+    <h1>
+      About NESC
+    </h1>
+
+    <hr>
+
+    <br />
+
+    <p>
+      NESC is the national electronic student card that verifies the status of an active university/PhD student in the
+      Republic of Bulgaria. University and PhD student can use NESC to demonstrate their status to universities, student
+      canteens, museums, theaters, BSR (Bulgarian State Railways), public transport and other service providers.
+    </p>
+
+    <p>
+      NESC is issued to every active student/PhD student, based on the information provided to NACID by their
+      university/scientific organization. The student can access his/her electronic card upon successful activation of
+      his/her account in the National electronic student card Portal. For the activation of the account NACID notifies
+      the student via e-mail. If the student has not received an automatic activation e-mail, he/she can request it
+      using the <a routerLink="/access"
+         (click)="switchTabInAccess()">registration form</a> in the menu of the Portal.
+    </p>
+
+    <p>
+      The issuing, downloading and using of NESC is free of charge.
+    </p>
+
+    <p>
+      NESC is valid throughout the entire course of education and does not need to be reissued every year. Re-issuance
+      is necessary only in the event of changes to the personal information in NESC – e.g. when the student's last name
+      has changed.
+    </p>
+
+    <p>
+      The electronic card can be downloaded as a pdf document or be used directly from the student’s personal profile in
+      the system using his/her mobile device.
+    </p>
+
+    <p>A university/PhD student, who doesn’t have an active status, cannot access and download NESC from his/her
+      profile.</p>
+
+    <picture>
+      <img src="../../../../../assets/about-nesc-en.png"
+           style="width:500px;height:300px;"
+           class="center">
+    </picture>
+
+    <p>
+      When a user scans the QR or enters the UAN, the portal displays up-to-date information about the status of an
+      active student/PhD student, including his/her specialty and the university. The information is derived from the
+      Register of all active, interrupted and graduated students and doctoral students (RDPZSD).
+    </p>
+
+  </div>
+</div>

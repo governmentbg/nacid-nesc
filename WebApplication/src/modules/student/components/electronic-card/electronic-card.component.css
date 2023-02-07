@@ -1,0 +1,149 @@
+@media screen and (min-width:552px) {
+  .background-image-web {
+    width: 500px;
+    height: 324px;
+  }
+
+  .content {
+    display: inline-flex;
+  }
+
+  .fullName-container {
+    width: 270px;
+    padding-left: 29px;
+    color: #FFFF;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding-top: 135px;
+  }
+
+  .fullName {
+    display: flex;
+    flex-wrap: wrap;
+    width: 220px;
+    height: 44px;
+    align-content: center;
+  }
+
+  .qrCode-container {
+    padding-top: 116px;
+    padding-left: 66px;
+  }
+
+  .qrCodeImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+  }
+
+  .birth-uan-container {
+    display: inline-flex;
+    color: #FFFF;
+    width: -webkit-fill-available;
+    margin-top: 5px;
+  }
+
+  .birthDate-container {
+    font-size: 10px;
+    padding-left: 30px;
+    width: 180px;
+  }
+
+  .uan {
+    font-weight: bold;
+    font-size: 12px;
+    padding-left: 166px;
+  }
+}
+
+@media screen and (max-width:551px) {
+  :host {
+    line-height: 1em;
+  }
+
+  .background-image-web {
+    width: 321px;
+    height: 208px;
+  }
+
+  .content {
+    display: inline-flex;
+  }
+
+  .fullName-container {
+    width: 180px;
+    padding-left: 20px;
+    color: #FFFF;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding-top: 84px;
+  }
+
+  .fullName {
+    display: flex;
+    flex-wrap: wrap;
+    width: 180px;
+    height: 34px !important;
+    align-content: center;
+    font-size: 11px
+  }
+
+  .qrCode-container {
+    padding-top: 80px;
+    padding-left: 38px;
+  }
+
+  .qrCodeImage {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+  }
+
+  .birth-uan-container {
+    display: inline-flex;
+    color: #FFFF;
+    width: -webkit-fill-available;
+  }
+
+  .birthDate-container {
+    font-size: 7px;
+    padding-left: 20px;
+    width: 150px;
+  }
+
+  .uan {
+    font-weight: bold;
+    font-size: 8px;
+    padding-left: 72px;
+  }
+}
+
+.pdf-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5em;
+}
+
+.background-image-web {
+  background-size: contain !important;
+  margin: auto;
+  margin-top: 5em !important;
+}
+
+.background-image-web-bg {
+  background-image: url('../../../../assets/student-card.png') !important;
+}
+
+.background-image-web-en {
+  background-image: url('../../../../assets/student-card-en.png') !important;
+}
+
+.non-active {
+  color: var(--studentcard-primary-color);
+  text-align: center;
+  margin-top: 15em;
+  line-height: 20px;
+  font-size: 22px;
+}

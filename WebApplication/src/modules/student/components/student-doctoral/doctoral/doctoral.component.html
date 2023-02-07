@@ -1,0 +1,169 @@
+<mat-expansion-panel class="education-tab mb-4">
+  <mat-expansion-panel-header class="education-info"
+                              style="height: 57px;">
+    <mat-panel-title *ngIf="translate.currentLang === 'bg'">
+      <div class="full-education-info">
+        <div class="subheader">
+          {{ personDoctoral.institution?.name }} - {{ personDoctoral.speciality?.name }}, {{
+          personDoctoral.educationalQualification.name }}, {{ personDoctoral.educationalForm.name }}, {{
+          personDoctoral.duration }} год.
+        </div>
+        <ng-container
+                      *ngIf="personDoctoral.studentStatus?.alias !== 'graduated' && personDoctoral.semesters?.length > 0">
+          <span style="font-weight: bold"
+                [ngClass]="{
+              'text-red': personDoctoral.semesters[0].studentStatus?.alias === 'interrupted',
+              'text-green': personDoctoral.semesters[0].studentStatus?.alias === 'active',
+              'text-black': personDoctoral.semesters[0].studentStatus?.alias !== 'active' && personDoctoral.semesters[0].studentStatus?.alias !== 'interrupted'}">
+            {{ personDoctoral.semesters[0].studentStatus?.name }}</span>
+          ({{ personDoctoral.semesters[0].studentEvent?.name }})
+        </ng-container>
+        <ng-container *ngIf="personDoctoral.studentStatus?.alias === 'graduated'">
+          <span class="text-black"
+                style="font-weight: bold">
+            {{ personDoctoral.studentStatus?.name }}</span>
+          ({{ personDoctoral.studentEvent?.name }})
+        </ng-container>
+      </div>
+      <div class="short-education-info">
+        <div class="subheader">
+          {{ personDoctoral.institution?.name }} - {{ personDoctoral.educationalQualification.name }}
+        </div>
+      </div>
+      <div class="shortest-education-info">
+        <div class="subheader">
+          ({{ personDoctoral.institution?.shortName }}) - {{ personDoctoral.educationalQualification.name }}
+        </div>
+      </div>
+    </mat-panel-title>
+    <mat-panel-title *ngIf="translate.currentLang === 'en'">
+      <div class="full-education-info">
+        <div class="subheader">
+          {{ personDoctoral.institution?.nameAlt }} - {{ personDoctoral.speciality?.nameAlt }}, {{
+          personDoctoral.educationalQualification.nameAlt }}, {{ personDoctoral.educationalForm.nameAlt }}, {{
+          personDoctoral.duration }} years
+        </div>
+        <span style="font-weight: bold"
+              [ngClass]="{
+              'text-red': personDoctoral.semesters[0].studentStatus?.alias === 'interrupted', 
+              'text-green': personDoctoral.semesters[0].studentStatus?.alias === 'active',
+              'text-black': personDoctoral.semesters[0].studentStatus?.alias !== 'active' && personDoctoral.semesters[0].studentStatus?.alias !== 'interrupted'}">
+          {{ personDoctoral.semesters[0].studentStatus?.nameAlt }}</span>
+        ({{ personDoctoral.semesters[0].studentEvent?.nameAlt }})
+      </div>
+      <div class="short-education-info">
+        <div class="subheader">
+          {{ personDoctoral.institution?.nameAlt }} - {{ personDoctoral.educationalQualification.nameAlt }}
+        </div>
+      </div>
+      <div class="shortest-education-info">
+        <div class="subheader">
+          ({{ personDoctoral.institution?.shortNameAlt }}) - {{ personDoctoral.educationalQualification.nameAlt }}
+        </div>
+      </div>
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <form #doctoralForm="ngForm">
+    <div class="row">
+      <mat-form-field class="col-sm-12 col-lg-4">
+        <mat-label>{{ 'student.doctoral.subordinate' | translate }}</mat-label>
+        <input *ngIf="translate.currentLang === 'bg'"
+               matInput
+               readonly
+               value="{{personDoctoral.subordinate?.name}}"
+               name="subordinate">
+        <input *ngIf="translate.currentLang === 'en'"
+               matInput
+               readonly
+               value="{{personDoctoral.subordinate?.nameAlt}}"
+               name="subordinate">
+      </mat-form-field>
+
+      <mat-form-field class="col-sm-12 col-lg-8">
+        <mat-label>{{ 'student.doctoral.program' | translate }}</mat-label>
+        <input *ngIf="translate.currentLang === 'bg'"
+               matInput
+               readonly
+               [value]="personDoctoral.speciality?.name + ', ' + personDoctoral.educationalQualification?.name + ', ' + personDoctoral.educationalForm?.name + ', ' + personDoctoral?.duration"
+               name="program">
+        <input *ngIf="translate.currentLang === 'en'"
+               matInput
+               readonly
+               [value]="personDoctoral.speciality?.nameAlt + ', ' + personDoctoral.educationalQualification?.nameAlt + ', ' + personDoctoral.educationalForm?.nameAlt + ', ' + personDoctoral?.duration"
+               name="program">
+      </mat-form-field>
+    </div>
+
+    <div class="row mb-2">
+      <mat-form-field class="col-sm-12 col-lg-9">
+        <mat-label>{{ 'student.doctoral.reason' | translate }}</mat-label>
+        <input *ngIf="translate.currentLang === 'bg'"
+               matInput
+               readonly
+               [title]="personDoctoral.admissionReason?.name"
+               value="{{personDoctoral.admissionReason?.name}}"
+               name="reason">
+        <input *ngIf="translate.currentLang === 'en'"
+               matInput
+               readonly
+               [title]="personDoctoral.admissionReason?.nameAlt"
+               value="{{personDoctoral.admissionReason?.nameAlt}}"
+               name="reason">
+      </mat-form-field>
+
+      <mat-form-field class="col-sm-12 col-lg-3">
+        <mat-label>{{ 'student.doctoral.startDate' | translate }}</mat-label>
+        <input matInput
+               readonly
+               [value]="personDoctoral?.startDate"
+               [min]="personDoctoral?.startDate"
+               [max]="personDoctoral?.startDate"
+               [matDatepicker]="pickerStart">
+        <!-- <mat-datepicker-toggle matSuffix
+                               [for]="pickerStart"></mat-datepicker-toggle> -->
+        <mat-datepicker #pickerStart></mat-datepicker>
+      </mat-form-field>
+
+      <!-- <mat-form-field class="col-sm-12 col-lg-2">
+        <mat-label>{{ 'student.doctoral.finishDate' | translate }}</mat-label>
+        <input matInput
+               readonly
+               [disabled]="!personDoctoral.endDate"
+               [value]="personDoctoral?.endDate"
+               [min]="personDoctoral?.endDate"
+               [max]="personDoctoral?.endDate"
+               [matDatepicker]="pickerFinish">
+        <mat-datepicker-toggle matSuffix
+                               [for]="pickerFinish"></mat-datepicker-toggle>
+        <mat-datepicker #pickerFinish></mat-datepicker>
+      </mat-form-field> -->
+    </div>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="child-expansion">
+        <mat-panel-title class="subheader">
+          {{ 'student.university.previousEducation.title' | translate }}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-student-previous-education *ngIf="personDoctoral.peHighSchoolType !== 3"
+                                      [person]="personDoctoral">
+      </app-student-previous-education>
+      <app-student-previous-education-abroad *ngIf="personDoctoral.peHighSchoolType === 3"
+                                             [person]="personDoctoral">
+      </app-student-previous-education-abroad>
+    </mat-expansion-panel>
+
+    <ng-container *ngIf="personDoctoral.semesters?.length > 0">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header class="child-expansion">
+          <mat-panel-title class="subheader">
+            {{ 'student.doctoral.additional.title' | translate }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-student-doctoral-semester [semesters]="personDoctoral.semesters"></app-student-doctoral-semester>
+      </mat-expansion-panel>
+    </ng-container>
+
+  </form>
+</mat-expansion-panel>

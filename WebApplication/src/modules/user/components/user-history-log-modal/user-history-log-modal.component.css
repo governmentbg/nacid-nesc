@@ -1,0 +1,82 @@
+.close:focus {
+  outline: 0;
+}
+
+.header {
+  font-weight: bold;
+}
+
+.d-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  position: relative;
+}
+
+hr {
+  margin: 0px;
+}
+
+table {
+  width: 700px;
+  margin-bottom: 0;
+}
+
+th td {
+  width: 250px
+}
+
+th {
+  border: 0;
+}
+
+.scrollit {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 530px;
+}
+
+.center {
+  text-align: center;
+}
+
+.bottom {
+  margin-top: 20px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  height: 62px;
+}
+
+.show-more-div {
+  margin: 0px;
+  padding: 0px;
+  margin-top: 10px;
+}
+
+.show-more {
+  width: 140px;
+  vertical-align: middle;
+  margin: 0px;
+
+}
+
+.containerInfo h1 {
+  display: inline-block;
+}
+
+.infoIcon {
+  vertical-align: middle;
+  margin-left: 0.3em;
+}
+
+::ng-deep .mat-tooltip {
+  font-size: 16px !important;
+}
+
+@media screen and (max-width:996px) {
+  .scrollit {
+    overflow: auto !important;
+    height: 560px;
+  }
+}

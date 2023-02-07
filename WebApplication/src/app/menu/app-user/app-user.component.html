@@ -1,0 +1,44 @@
+<button mat-button
+        class="menu-item"
+        #trigger="matMenuTrigger"
+        (menuOpened)="menuOpened = trigger.menuOpen"
+        (menuClosed)="menuOpened = trigger.menuOpen"
+        [ngClass]="{'menuOpened': menuOpened === true}"
+        [matMenuTriggerFor]="userMenu">
+        {{ translate.currentLang === 'bg' ? fullName : fullNameAlt }} <span
+              class="material-icons">arrow_drop_down</span>
+</button>
+
+<mat-menu #userMenu="matMenu"
+          xPosition="after">
+        <button mat-menu-item
+                style="font-weight: 600; padding-top: -5px"
+                (click)="openChangeEmailAddressDialog()">
+                <mat-icon class="menu-dropdown-icon">email</mat-icon>{{
+                'buttons.changeEmail' | translate }}
+        </button>
+        <button mat-menu-item
+                style="font-weight: 600;"
+                (click)="openChangeNameDialog()">
+                <mat-icon class="menu-dropdown-icon">person</mat-icon>{{
+                'buttons.changeName' | translate }}
+        </button>
+        <button mat-menu-item
+                style="font-weight: 600;"
+                (click)="openHistoryLogDialog()">
+                <mat-icon class="menu-dropdown-icon">manage_search</mat-icon>{{
+                'buttons.searchByUANHistory' | translate }}
+        </button>
+        <button mat-menu-item
+                style="font-weight: 600;"
+                (click)="openChangePasswordDialog()">
+                <mat-icon class="menu-dropdown-icon">lock</mat-icon>{{
+                'buttons.changePassword' | translate }}
+        </button>
+        <button mat-menu-item
+                style="font-weight: 600;"
+                (click)="logout()">
+                <mat-icon class="menu-dropdown-icon">exit_to_app</mat-icon>{{
+                'buttons.exit' | translate }}
+        </button>
+</mat-menu>

@@ -1,0 +1,58 @@
+<form #newProfileForm="ngForm">
+  <mat-form-field appearance="outline"
+                  style="width: 100%;"
+                  floatLabel="default">
+    <mat-label>{{ 'user.repeatable.email' | translate }}</mat-label>
+    <input matInput
+           type="text"
+           name="email"
+           #email="ngModel"
+           [(ngModel)]="registerModel.email"
+           pattern="{{emailRegex}}"
+           required>
+  </mat-form-field>
+
+  <div class="d-flex justify-content-between">
+    <mat-form-field appearance="outline"
+                    style="width: 40%;"
+                    floatLabel="default">
+      <mat-label>{{ 'user.requestProfile.identificationType' | translate }}</mat-label>
+      <mat-select name="identificationType"
+                  #identificationType="ngModel"
+                  [(ngModel)]="registerModel.identificationType"
+                  (ngModelChange)="clearIdentificator()"
+                  required>
+        <!-- <mat-option>--</mat-option> -->
+        <mat-option [value]="identificationTypes.UAN">
+          {{ 'student.basic.uan' | translate }}</mat-option>
+        <mat-option [value]="identificationTypes.UIN">
+          {{ 'student.basic.uin' | translate }}</mat-option>
+        <mat-option [value]="identificationTypes.ForeignerNumber">
+          {{ 'student.basic.foreignerNumber' | translate }}</mat-option>
+        <mat-option [value]="identificationTypes.IDN">
+          {{ 'student.basic.idnNumber' | translate }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline"
+                    style="width: 55%;"
+                    floatLabel="default">
+      <mat-label>{{ 'user.requestProfile.identificator' | translate }}</mat-label>
+      <input matInput
+             type="text"
+             name="identificator"
+             #identificator="ngModel"
+             [(ngModel)]="registerModel.identificator"
+             [disabled]="!identificationType.valid"
+             required>
+    </mat-form-field>
+  </div>
+
+  <button mat-raised-button
+          color="primary"
+          (click)="requestProfile()"
+          [disabled]="!newProfileForm.valid"
+          style="font-weight: 700; width: 100%;">
+    {{ 'buttons.send' | translate }}
+  </button>
+</form>

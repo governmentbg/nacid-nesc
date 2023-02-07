@@ -1,0 +1,32 @@
+<div *ngIf="!isLoggedIn"
+     class="root">
+  <div *ngIf="currentLanguage !== 'bg'"
+       class="lang d-flex"
+       [ngClass]="{'mobile-lang': isMobile === true}"
+       (click)="switchLang('bg')">
+    <mat-icon style="margin-right: 5px;">language</mat-icon>БГ
+  </div>
+  <div *ngIf="currentLanguage !== 'en'"
+       class="lang d-flex"
+       [ngClass]="{'mobile-lang': isMobile === true}"
+       (click)="switchLang('en')">
+    <mat-icon style="margin-right: 5px;">language</mat-icon>EN
+  </div>
+</div>
+
+<ng-container *ngIf="isLoggedIn">
+  <button *ngIf="currentLanguage !== 'bg'"
+          class="lang-logged d-flex menu-item"
+          [ngClass]="{'menu-button': isMobile === true}"
+          (click)="switchLang('bg')"
+          mat-button>
+    <mat-icon style="margin-right: 5px;">language</mat-icon>БГ
+  </button>
+  <button *ngIf="currentLanguage !== 'en'"
+          class="lang-logged d-flex menu-item"
+          [ngClass]="{'menu-button': isMobile === true}"
+          (click)="switchLang('en')"
+          mat-button>
+    <mat-icon style="margin-right: 5px;">language</mat-icon>EN
+  </button>
+</ng-container>

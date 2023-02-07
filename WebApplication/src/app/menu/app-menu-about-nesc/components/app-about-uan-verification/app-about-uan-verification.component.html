@@ -1,0 +1,97 @@
+<div class="container nesc-info-wrapper">
+  <div *ngIf="translate.currentLang == 'bg'">
+    <h1>
+      Справка по ЕАН
+    </h1>
+
+    <hr>
+
+    <br />
+
+    <p>
+      Единният академичен номер (ЕАН) на студента или докторанта е неговият персонален идентификационен номер в
+      Регистъра на всички действащи, прекъснали и завършили студенти и докторанти. Чрез <a
+         routerLink="/search">въвеждането на ЕАН</a> може да бъде проверена валидността на националната
+      електронната
+      студентска карта и актуалният статус за обучението на студент или докторант в Република България.
+      Порталът извежда актуална информация относно специалността, ОКС/ОНС, формата на обучение и висшето училище, в
+      което
+      се
+      обучава студентът или докторантът.
+    </p>
+
+    <p>
+      Възможните резултати при справка за статус на студента или докторанта са:
+    </p>
+
+    <ul>
+      <li class="text-green bold">Действащ</li>
+      <li class="bold">Прекъснал</li>
+      <li class="bold">Недействащ</li>
+      <li class="bold">В процес на дипломиране</li>
+      <li class="bold">Дипломиран</li>
+    </ul>
+
+    <p>
+      Важно! Справките, предоставяни от портала на НЕСК, отразяват данните и информацията за студентите и докторантите
+      така, както са подадени към НАЦИД от съответното висше училище или научна организация. Своевременното отразяване
+      на промените в статуса на студент или докторант зависят изцяло от навременното подаване на информация от
+      съответното висше училище или научна организация.
+    </p>
+
+    <picture>
+      <img src="../../../../../assets/uan_verification.png"
+           style="width:500px;height:300px;"
+           class="center">
+    </picture>
+
+  </div>
+
+  <div *ngIf="translate.currentLang == 'en'">
+
+    <h1>
+      Verification by UAN
+    </h1>
+
+    <hr>
+
+    <br />
+
+    <p>
+      The university/PhD student’s unique academic number (UAN) is their personal identification number in the Register
+      of all active, interrupted and graduated students and doctoral students. By
+      <a routerLink="/search">entering the UAN</a>, users can verify the validity of
+      the national electronic student card and the current education status of university/PhD student in the Republic of
+      Bulgaria. The portal provides up-to-date information about the student’s specialty, their qualification/academic
+      degree,
+      form of study and university/scientific organization.
+    </p>
+
+    <p>
+      Possible results after status validation are the following:
+    </p>
+
+    <ul>
+      <li class="text-green bold">Undergaduate</li>
+      <li class="bold">Interrupted studies</li>
+      <li class="bold">Suspended studies</li>
+      <li class="bold">Currently graduating</li>
+      <li class="bold">Graduated</li>
+    </ul>
+
+
+    <p>
+      NB! The information in the NESC portal is presented “as-is” provided by the student’s university/scientific
+      organization. Updates in the status of a student depends entirely on the opportunely submission of information
+      from the student’s university/scientific
+      organization.
+    </p>
+
+    <picture>
+      <img src="../../../../../assets/uan_verification_en.png"
+           style="width:500px;height:300px;"
+           class="center">
+    </picture>
+
+  </div>
+</div>

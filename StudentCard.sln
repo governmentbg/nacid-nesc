@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentCard.Hosting", "StudentCard.Hosting\StudentCard.Hosting.csproj", "{5E4AD8FE-2744-4311-9082-AE30244A8CD0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentCard.Data", "StudentCard.Data\StudentCard.Data.csproj", "{E0B920E3-9B5C-48A8-9095-8F3A75D9B788}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentCard.Application", "StudentCard.Application\StudentCard.Application.csproj", "{4566157A-6083-4FCD-9B3A-278A6197E274}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentCard.Persistence", "StudentCard.Persistence\StudentCard.Persistence.csproj", "{32F3F6B0-0028-456D-BD7A-3A8A97684968}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentCard.Infrastructure", "StudentCard.Infrastructure\StudentCard.Infrastructure.csproj", "{6334ED36-408B-4452-8DED-A5A93E89D5E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSL.API", "SSL.API\SSL.API.csproj", "{1E222917-11F0-48E5-BE7A-3DA3DEE56E2F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E4AD8FE-2744-4311-9082-AE30244A8CD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E4AD8FE-2744-4311-9082-AE30244A8CD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E4AD8FE-2744-4311-9082-AE30244A8CD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E4AD8FE-2744-4311-9082-AE30244A8CD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0B920E3-9B5C-48A8-9095-8F3A75D9B788}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0B920E3-9B5C-48A8-9095-8F3A75D9B788}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0B920E3-9B5C-48A8-9095-8F3A75D9B788}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0B920E3-9B5C-48A8-9095-8F3A75D9B788}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4566157A-6083-4FCD-9B3A-278A6197E274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4566157A-6083-4FCD-9B3A-278A6197E274}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4566157A-6083-4FCD-9B3A-278A6197E274}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4566157A-6083-4FCD-9B3A-278A6197E274}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32F3F6B0-0028-456D-BD7A-3A8A97684968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32F3F6B0-0028-456D-BD7A-3A8A97684968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32F3F6B0-0028-456D-BD7A-3A8A97684968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32F3F6B0-0028-456D-BD7A-3A8A97684968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6334ED36-408B-4452-8DED-A5A93E89D5E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6334ED36-408B-4452-8DED-A5A93E89D5E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6334ED36-408B-4452-8DED-A5A93E89D5E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6334ED36-408B-4452-8DED-A5A93E89D5E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E222917-11F0-48E5-BE7A-3DA3DEE56E2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E222917-11F0-48E5-BE7A-3DA3DEE56E2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E222917-11F0-48E5-BE7A-3DA3DEE56E2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E222917-11F0-48E5-BE7A-3DA3DEE56E2F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0316B570-8A83-4661-908E-12EDD0F5915F}
+	EndGlobalSection
+EndGlobal

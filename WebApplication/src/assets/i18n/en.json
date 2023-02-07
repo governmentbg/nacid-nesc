@@ -1,0 +1,322 @@
+{
+  "loadingIndicator": "Loading, please wait...",
+  "footer": {
+    "rights_reserved": "\u00a0All\u00a0rights\u00a0reserved",
+    "privacyPolicy": "Privacy policy",
+    "financeInfo": "The project is financed by the Operational Program \"Good Governance\", co-financed by the European Union, through the European Social Fund in implementation of project No. BG05SFOP001-1.017 \"Creation, upgrading and consolidation of electronic registers of the National Information and Documentation Center (NACID) in the field of higher education\"",
+    "feedback": {
+      "toggler": "Feedback",
+      "title": "Feedback form",
+      "email": "Your e-mail address necessary for the feedback",
+      "topic": "Topic of the message or enquiry",
+      "text": "Enquiry or a short message",
+      "send": "Send"
+    }
+  },
+  "buttons": {
+    "send": "Send",
+    "back": "Back",
+    "change": "Change",
+    "continue": "Yes, continue",
+    "cancel": "Cancel",
+    "exit": "Exit",
+    "changePassword": "Password change",
+    "profile": "Profile",
+    "changeEmail": "Change email address",
+    "changeName": "Change names",
+    "searchByUANHistory": "NESC checks",
+    "showMore": "Show more",
+    "aboutNesc": "About NESC",
+    "aboutPortal": "About portal",
+    "whatIsNesc": "What is NESC?",
+    "uanVerification": "UAN verification"
+  },
+  "user": {
+    "repeatable": {
+      "usernameLong": "Username (email address)",
+      "email": "Email address",
+      "password": "Password",
+      "passwordAgain": "Enter password again",
+      "invalidInput": "The input data is invalid!",
+      "passwordRequirements": "Password must consist of atleast 6 symbols, a digit, uppercase and lowercase letter"
+    },
+    "forgottenPassword": {
+      "title": "Forgotten password"
+    },
+    "recoveryPassword": {
+      "title": "Password recovery"
+    },
+    "changePassword": {
+      "title": "Password change",
+      "oldPassword": "Old password",
+      "newPassword": "New password",
+      "newPasswordAgain": "Enter new password again",
+      "changeButton": "Change"
+    },
+    "changeEmailAddress": {
+      "title": "Change email address",
+      "newEmailAddress": "New email address",
+      "changeButton": "Change",
+      "password": "Password",
+      "description": "After changing your email, you will only be able to log in this portal with your new email. The change will automatically be entered in the Register of all active, interrupted and graduated students and doctoral students. The new email will be visible to all universities and/or research organizations where you study.",
+      "newEmailAddressAgain": "Enter new email address again"
+    },
+    "changeName": {
+      "title": "Change names",
+      "changeButton": "Change",
+      "textGRAO": "Your names in DG „GRAO“: ",
+      "description": "The change in your names will also be entered in the Register of all active, interrupted and graduated students and doctoral students and will be visible to the universities and/or research organizations where you study. Your new names are extracted from the NDB \"Population\" of DG \"GRAO\" and cannot be edited."
+    },
+    "login": {
+      "title": "System login",
+      "titleShort": "LOGIN",
+      "loginButton": "LOGIN",
+      "forgottenPassword": "Forgotten password"
+    },
+    "register": {
+      "registerButton": "REGISTER"
+    },
+    "activatePassword": {
+      "title": "Activate password",
+      "activateButton": "Activate",
+      "birthDate": "Date of birth"
+    },
+    "activateNewEmailAddress": {
+      "title": "Confirm email address",
+      "confirmButton": "Confirm",
+      "birthDate": "Date of birth"
+    },
+    "logHistory": {
+      "searches": "NESC checks",
+      "searchedFrom": "Your NESC was checked from these IP adresses:"
+    },
+    "requestProfile": {
+      "title": "Request an account activation",
+      "titleShort": "REGISTER",
+      "identificationType": "ID type",
+      "identificator": "ID number"
+    }
+  },
+  "toastrError": {
+    "forbidden": "Access denied!",
+    "SystemIncorrectParameters": "Incorrect parameters!",
+    "UserEmailTaken": "Email is taken!",
+    "UserInvalidCredentials": "Invalid credentials!",
+    "UserActivationTokenAlreadyUsed": "Activation token is already used!",
+    "UserActivationTokenExpired": "Activation token is expired!",
+    "UserChangePasswordNewPasswordsMismatch": "New passwords mismatch!",
+    "UserChangePasswordOldPasswordMismatch": "Old password is incorrect!",
+    "UserDeactivated": "User is deactivated!",
+    "UserIncorrectBirthDate": "The date of birth does not correspond to the date submitted to the university!",
+    "UserInvalidEmail": "Invalid email!",
+    "StudentNotFoundByUAN": "University or PhD student with the given UAN was not found in the database of the registry!",
+    "UserInvalidPassword": "Password is incorrect!",
+    "NotAccessForRequestedDiploma": "You cannot access the selected diploma!",
+    "UserChangeEmailNewEmailsMismatch": "New emails mismatch!",
+    "NewEmailActivationTokenExpired": "Email changing token is expired!",
+    "NewEmailActivationTokenAlreadyUsed": "Email changing token is already used!",
+    "NewPasswordRecoveryTokenExpired": "Password recovery link is expired!",
+    "NewPasswordRecoveryTokenAlreadyUsed": "Passport recovery link is already used!",
+    "UserRegisterNotFoundWithGivenIdentificator": "A record of an active university/PhD student with this ID was not found in Register of all active, interrupted and graduated students and doctoral students. Please contact your university/scientific organization or NACID using the feedback form.",
+    "UserRegisterEmailMismatch_1": "The email you entered does not match the email in your record (",
+    "UserRegisterEmailMismatch_2": ") in the Register of all active, interrupted and graduated students and doctoral students. If you are not certain what is your email in the register or whether it is the correct one, please contact your university/scientific organization.",
+    "UserRegisterEmailNotFoundInRDPZSD": "Your university/scientific organization has not entered an email in your record in the Register of all active, interrupted and graduated students and doctoral students. The activation of your account in the National electronic student card system cannot be completed. Please contact your university/scientific organization.",
+    "UserAlreadyHasProfileWIthGivenUan": "An account with the ID you entered has already been activated. If you are not able to reset your password using the “Forgotten password” section, please contact your university/scientific organization or NACID using the feedback form.",
+    "UserRegisterNotActive": "A record of an active university/PhD student with this ID was not found in Register of all active, interrupted and graduated students and doctoral students.",
+    "EAuthResponseStatus": {
+      "AuthenticationFailed": "Authentication failed",
+      "CanceledByUser": "Process canceled by user",
+      "InvalidResponseXML": "Invalid response XML",
+      "InvalidSignature": "Invalid signature",
+      "MissingEGN": "Missing PIN",
+      "NotDetectedQES": "QES not detected",
+      "NoEgnMatch": "User with given PIN is not found!"
+    },
+    "NoDifferenceFoundInNames": "In the National Database \"Population\" there is no information about your names being changed.",
+    "RegiXConnectionFailed": "Problem with extracting data from NBD „Population“ of DG „GRAO“",
+    "EmptyRegixResponse": "Problem with extracting data from NBD „Population“ of DG „GRAO“",
+    "UnableToSendEmail": "An error occured while sending the feedback message."
+  },
+  "toastrSuccess": {
+    "UserActivateProfile": "Successfully activated account",
+    "UserChangePassword": "Password changed successfully",
+    "UserLinkForActivation": "Activation link sent to the user",
+    "UserChangeNewEmail": "Activation link is sent to the new email address",
+    "UserActivateNewEmail": "Successfully changed email! When logging in again, use the new email address",
+    "UserChangeName": "You successfully changed your names!",
+    "FeedbackSent": "Feedback message has been sent.",
+    "UserRequestedRegister": "You will receive an email with the activation link for your account in the National electronic student card system. If you do not receive the email, please check in your Spam folder or contact NACID using the feedback form."
+  },
+  "validations": {
+    "email": "Please, enter a valid email address"
+  },
+  "common": {
+    "nacid": "NACID",
+    "studentCard": "National student card"
+  },
+  "student": {
+    "uanFull": "Unified academical number (UAN)",
+    "uan": "UAN",
+    "basic": {
+      "title": "Personal information",
+      "firstName": "First name",
+      "middleName": "Middle name",
+      "lastName": "Last name",
+      "otherNames": "Other names",
+      "firstNameAlt": "First name (in latin)",
+      "middleNameAlt": "Middle name (in latin)",
+      "lastNameAlt": "Last name (in latin)",
+      "otherNamesAlt": "Other names (in latin)",
+      "uin": "UIN",
+      "foreignerNumber": "Foreigner number",
+      "idnNumber": "Id number",
+      "uan": "UAN",
+      "passportCopy": "Passport copy",
+      "birthDate": "Date of birth",
+      "gender": "Gender",
+      "email": "Email",
+      "phoneNumber": "Phone number",
+      "missingImg": "The university has not submitted your photo"
+    },
+    "additionalTabs": {
+      "birthPlaceTitle": "Birth place",
+      "nationalityTitle": "Citizenship",
+      "permanentResidence": "Permanent residence",
+      "country": "Country",
+      "settlement": "Settlement",
+      "district": "District",
+      "municipality": "Municipality",
+      "citizenship": "Citizenship",
+      "secondCitizenship": "Second Citizenship",
+      "postCode": "Post code",
+      "residenceAddress": "Permanent residence address"
+    },
+    "common": {
+      "basicDataTitle": "Basic data",
+      "secondaryEducationTitle": "Secondary education",
+      "higherEducationTitle": "Higher education",
+      "doctoralEducationTitle": "Doctoral programs"
+    },
+    "secondary": {
+      "title": "Secondary education information",
+      "country": "Country",
+      "graduationYear": "Year of graduation",
+      "school": "School",
+      "schoolSettlement": "School settlement",
+      "profession": "Profession/Speciality",
+      "diplomaNumber": "Diploma number",
+      "diplomaDate": "Date of issue"
+    },
+    "university": {
+      "title": "Higher education information",
+      "subordinate": "Faculty",
+      "admissionReason": "Admission Reason",
+      "institutionSpeciality": "Speciality",
+      "facultyNumber": "Faculty number",
+      "qualification": "Qualification",
+      "previousEducation": {
+        "title": "Previous Education",
+        "type": "Type",
+        "highSchoolType": "High school type",
+        "educationalQualification": "Educational Qualification",
+        "institution": "Institution",
+        "subordinate": "Subordinate",
+        "institutionSpeciality": "Institution Speciality",
+        "researchArea": "Research Area",
+        "diplomaNumber": "Diploma Number",
+        "diplomaDate": "Diploma Date",
+        "abroad": {
+          "type": "Type",
+          "highSchoolType": "High school type",
+          "acquiredEducationalQualification": "Acquired Educational Qualification ",
+          "recognizedEducationalQualification": "Recognized Educational Qualification",
+          "country": "Country",
+          "institution": "Institution",
+          "acquiredInstitutionSpeciality": "Acquired Institution Speciality",
+          "recognizedInstitutionSpeciality": "Recognized Institution Speciality",
+          "researchArea": "Research Area",
+          "diplomaNumber": "Diploma Number",
+          "diplomaDate": "Diploma Date",
+          "document": "Recognition Document",
+          "documentNumber": "Document Number",
+          "documentDate": "Document Date"
+        }
+      },
+      "semester": {
+        "title": "Semestrial information",
+        "status": "Status",
+        "event": "Event",
+        "period": "Period",
+        "courseSemester": "Course and semester",
+        "feeType": "Fee type",
+        "note": "Note"
+      },
+      "diploma": {
+        "title": "Diploma",
+        "diplomaNumber": "Diploma Number",
+        "registrationDiplomaNumber": "Diploma registration number",
+        "diplomaDate": "Date of issue",
+        "diplomafile": "Diploma file",
+        "isValid": "Is valid diploma",
+        "invalid": "Invalid",
+        "valid": "Valid"
+      }
+    },
+    "doctoral": {
+      "title": "Doctoral programs information",
+      "subordinate": "Faculty",
+      "program": "Doctoral program",
+      "reason": "Admission reason",
+      "startDate": "Registration date",
+      "finishDate": "Finish date",
+      "additional": {
+        "title": "Education information",
+        "status": "Status",
+        "event": "Event",
+        "protocolDate": "Protocol/Order date",
+        "protocolNumber": "Protocol/Order number",
+        "educationYear": "Education year",
+        "feeType": "Fee type"
+      }
+    }
+  },
+  "electronicCard": {
+    "title": "Electronic student card",
+    "pdfBtn": "Download as PDF",
+    "textInfo": "To check the data, scan the QR code or use the EAN on",
+    "textForNonActive": "This service is only avaliable for active university/PhD students"
+  },
+  "tables": {
+    "logHistory": {
+      "IP": "Accessed from",
+      "date": "Date",
+      "empty": "Log list is currently empty."
+    }
+  },
+  "eAuthentication": {
+    "login": "Log in with e-Auth",
+    "logout": "Log out",
+    "continue": "Continue",
+    "message": "After clicking the button \"Continue\" you will be redirected to the eAuthentication website. There you have to choose the preffered for you metod for authentication."
+  },
+  "portal": {
+    "menuButton": "CARD CHECK",
+    "application": {
+      "verification_title": "Student card Verification",
+      "info_first": "In this section of the Portal you can check the validity of the card of university/PhD students in Bulgaria by entering their UAN in the field",
+      "info_second": "and pressing the \"Verify\" button.",
+      "check_btn": "Verify"
+    },
+    "student": {
+      "uanFull": "Unified academical number (UAN)",
+      "uan": "UAN",
+      "basic": {
+        "firstName": "First name",
+        "lastName": "Last name",
+        "firstAndLastName": "Name",
+        "birthDate": "Birth date"
+      },
+      "noActiveEducation": "In the register of all active, interrupted and graduated students and doctoral students no information was found that the person is an active student or doctoral student in the Republic of Bulgaria."
+    }
+  }
+}

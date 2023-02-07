@@ -1,0 +1,46 @@
+p {
+  font-size: 18px;
+  text-align: justify;
+}
+
+h1 {
+  color: #0e2e50;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+@media screen and (max-width:768px) {
+  .container {
+    margin-top: 1em;
+  }
+}
+
+@media screen and (min-width:769px) {
+  .container {
+    margin-top: 3em;
+  }
+}
+
+hr {
+  border: 1px solid #FF9800;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto !important;
+  width: 100% !important;
+  max-width: 500px;
+  max-height: 300px;
+  margin-bottom: 2em;
+  margin-top: 1em;
+  border-radius: 20px;
+}
+
+.nesc-info-wrapper {
+  background-color: white;
+  border-radius: 24px;
+  padding: 36px 36px 36px 36px;
+  margin-bottom: 36px;
+}

@@ -1,0 +1,42 @@
+<mat-card class="profile-card">
+  <div>
+    <span class="full-uan">{{ 'student.uanFull' | translate }}</span>
+    <span class="short-uan">{{ 'student.uan' | translate }}</span>
+
+    <span style="font-weight: bold;">
+      {{ student.uan }}
+    </span>
+  </div>
+  <!-- <button mat-button
+          style="font-weight: 600; line-height: 1.4em;"
+          [routerLink]="['/electronic/card']">
+    <mat-icon class="menu-dropdown-icon">credit_card</mat-icon>
+    {{ translate.currentLang === 'bg' ? 'Електронна карта' : 'Electronic card' }}
+  </button> -->
+
+</mat-card>
+
+<mat-tab-group mat-align-tabs="start"
+               [(selectedIndex)]="selectedIndex">
+
+  <mat-tab label="{{ 'student.common.basicDataTitle' | translate }}">
+    <app-student-basic [personBasic]="student.personBasicDto"
+                       [uan]="student.uan"></app-student-basic>
+  </mat-tab>
+
+  <!-- <mat-tab label="{{ 'student.common.secondaryEducationTitle' | translate }}">
+    <app-student-secondary [personSecondary]="student.personSecondaryDto"></app-student-secondary>
+  </mat-tab> -->
+
+  <mat-tab *ngIf="student.personStudentsDto.length > 0"
+           label="{{ 'student.common.higherEducationTitle' | translate }}">
+    <app-student-university [personStudents]="student.personStudentsDto"></app-student-university>
+
+  </mat-tab>
+
+  <mat-tab *ngIf="student.personDoctoralsDto.length > 0"
+           label="{{ 'student.common.doctoralEducationTitle' | translate }}">
+    <app-student-doctoral [personDoctorals]="student.personDoctoralsDto"></app-student-doctoral>
+  </mat-tab>
+
+</mat-tab-group>

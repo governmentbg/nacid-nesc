@@ -1,0 +1,37 @@
+<mat-card>
+  <mat-card-header style="justify-content: center;">
+    <mat-card-title>
+      <h5>{{ 'user.activateNewEmailAddress.title' | translate }}</h5>
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form #newEmailAddress="ngForm">
+
+      <mat-form-field appearance="outline"
+                      class="mb-1"
+                      style="width: 100%;"
+                      floatLabel="default">
+        <mat-label>{{ 'user.activateNewEmailAddress.birthDate' | translate }}</mat-label>
+        <input matInput
+               name="studentBirthdate"
+               [max]="currentDate"
+               [(ngModel)]="model.birthDate"
+               [matDatepicker]="birthDateCompare"
+               required>
+        <mat-datepicker-toggle matSuffix
+                               [for]="birthDateCompare"></mat-datepicker-toggle>
+        <mat-datepicker #birthDateCompare></mat-datepicker>
+      </mat-form-field>
+
+      <button mat-raised-button
+              class="mt-2"
+              color="primary"
+              (click)="activateNewEmailAddress()"
+              [disabled]="!newEmailAddress.valid"
+              style="font-weight: 700; width: 100%;">
+        {{ 'user.activateNewEmailAddress.confirmButton' | translate }}
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>

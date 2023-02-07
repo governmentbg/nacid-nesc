@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg d-flex"
+     [ngStyle]="{'color': isLoggedIn ? '#fff' : '#0E2E50'}">
+  <div class="row">
+    <ul class="navbar-nav mr-auto main-menu"
+        style="align-items: center">
+
+      <button *ngIf="isLoggedIn"
+              mat-button
+              class="menu-item"
+              [ngClass]="{ 'menu-button': isMobile === true }"
+              (click)="switchTab(0)"
+              routerLink="/student">
+        {{ 'buttons.profile' | translate }}
+      </button>
+
+      <app-menu-items [menuItems]="menuItems"
+                      [isLoggedIn]="isLoggedIn"
+                      [isMobile]="false"></app-menu-items>
+
+      <li *ngIf="isLoggedIn"
+          class="nav-item"
+          style="position: relative;">
+        <app-user></app-user>
+      </li>
+
+      <button *ngIf="!isLoggedIn"
+              mat-button
+              class="menu-item-not-logged"
+              routerLink="/search">
+        {{ 'portal.menuButton' | translate }}
+      </button>
+
+      <button *ngIf="!isLoggedIn"
+              mat-button
+              class="menu-item-not-logged"
+              (click)="switchTab(0)"
+              routerLink="/access">
+        {{ 'user.login.loginButton' | translate }}
+      </button>
+
+      <button *ngIf="!isLoggedIn"
+              mat-button
+              class="menu-item-not-logged"
+              (click)="switchTab(1)"
+              routerLink="/access">
+        {{ 'user.register.registerButton' | translate }}
+      </button>
+
+      <li>
+        <app-change-language [isLoggedIn]="isLoggedIn"
+                             style="cursor: auto"
+                             [isMobile]="false"></app-change-language>
+      </li>
+
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,124 @@
+<footer>
+  <div *ngIf="isLoggedIn"
+       class="footer-info">
+    <div class="row justify-content-center mb-1">
+      <a *ngIf="translate.currentLang == 'bg'"
+         href="https://nacid.bg/bg/"
+         target="_blank">
+        <img class=""
+             src="assets/nacid_logo.png" /> </a>
+
+      <a *ngIf="translate.currentLang == 'en'"
+         href="https://nacid.bg/en/"
+         target="_blank">
+        <img class=""
+             src="assets/nacid_logo.png" /> </a>
+    </div>
+
+    <div class="row justify-content-center"
+         id="footer-nacid-link">
+      <a *ngIf="translate.currentLang == 'bg'"
+         href="https://nacid.bg/bg/"
+         class="footer-link">{{ 'common.nacid' | translate }}</a>
+      <a *ngIf="translate.currentLang == 'en'"
+         href="https://nacid.bg/en/"
+         class="footer-link">{{ 'common.nacid' | translate }}</a>
+    </div>
+
+    <div class="row justify-content-center"
+         id="footer-links">
+
+      <a *ngIf="translate.currentLang == 'bg'"
+         class="footer-link"
+         href="assets/documents/PrivacyPolicy_IntSystem_BG.pdf"
+         target="_blank"
+         class="footer-link">{{ 'footer.privacyPolicy' | translate }}</a>
+      <a *ngIf="translate.currentLang == 'en'"
+         class="footer-link"
+         href="assets/documents/PrivacyPolicy_IntSystem_EN.pdf"
+         target="_blank"
+         class="footer-link">{{ 'footer.privacyPolicy' | translate }}</a>
+
+      <span class="separator"> | </span>
+
+      <div class="footer-link"
+           (click)="openFeedbackDialog()">{{ 'footer.feedback.toggler' | translate }}</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="d-flex justify-content-center row">
+      <img class="col-12 align-self-center"
+           style="max-width: 300px; padding-bottom: 32px;"
+           [src]="translate.currentLang == 'bg' ? 'assets/EU_SEFright.png' : 'assets/EU_SEFright_en.png'">
+      <img class="col-12"
+           style="max-width: 300px; padding-bottom: 32px;"
+           [src]="translate.currentLang == 'bg' ? 'assets/logo-bg-right-no-back.png' : 'assets/logo-bg-right-no-back_en.png' ">
+    </div>
+
+    <div class="row mb-3 justify-content-center">
+      <span class="finance-info">
+        {{'footer.financeInfo' | translate }}
+      </span>
+    </div>
+    <div *ngIf="isLoggedIn"
+         class="row justify-content-center">
+      <a *ngIf="translate.currentLang == 'bg'"
+         href="http://www.eufunds.bg/bg"
+         target="_blank"
+         class="default-a mb-3">
+        www.eufunds.bg
+      </a>
+      <a *ngIf="translate.currentLang == 'en'"
+         href="http://www.eufunds.bg/en"
+         target="_blank"
+         class="default-a mb-3">
+        www.eufunds.bg
+      </a>
+    </div>
+
+    <div *ngIf="!isLoggedIn"
+         class="row justify-content-center footer-link-container">
+      <a *ngIf="translate.currentLang == 'bg'"
+         href="http://www.eufunds.bg/bg"
+         target="_blank"
+         class="footer-link-not-logged mr-4">
+        www.eufunds.bg
+      </a>
+      <a *ngIf="translate.currentLang == 'en'"
+         href="http://www.eufunds.bg/en"
+         target="_blank"
+         class="footer-link-not-logged mr-4">
+        www.eufunds.bg
+      </a>
+
+      <a *ngIf="translate.currentLang == 'bg'"
+         href="assets/documents/PrivacyPolicy_Portal_BG.pdf"
+         target="_blank"
+         class="footer-link-not-logged"
+         style="cursor: pointer;">
+        {{ 'footer.privacyPolicy' | translate }}
+      </a>
+      <a *ngIf="translate.currentLang == 'en'"
+         href="assets/documents/PrivacyPolicy_Portal_EN.pdf"
+         target="_blank"
+         class="footer-link-not-logged"
+         style="cursor: pointer;">
+        {{ 'footer.privacyPolicy' | translate }}
+      </a>
+
+      <a (click)="openFeedbackDialog()"
+         target="_blank"
+         class="footer-link-not-logged ml-4"
+         style="cursor: pointer;">
+        {{ 'footer.feedback.toggler' | translate }}
+      </a>
+    </div>
+  </div>
+
+
+  <div class="disclaimer">
+    {{ 'common.studentCard' | translate }}. ©{{ currentYear }}&nbsp;{{ 'common.nacid' | translate }}. {{
+    'footer.rights_reserved' | translate }}.
+  </div>
+</footer>

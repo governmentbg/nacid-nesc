@@ -1,0 +1,106 @@
+<div class="custom-panel mt-4">
+  <div class="custom-panel-wrapper">
+    <div class="custom-panel-header">
+      <div class="custom-panel-header-title">
+        {{ 'student.secondary.title' | translate }}
+      </div>
+    </div>
+
+    <div class="custom-panel-body">
+      <form #secondaryForm="ngForm">
+        <div class="row">
+
+          <mat-form-field class="col-sm-12 col-lg-3">
+            <mat-label>{{ 'student.secondary.country' | translate }}</mat-label>
+            <input *ngIf="translate.currentLang === 'bg'"
+                   matInput
+                   readonly
+                   value="{{personSecondary.country?.name}}"
+                   name="country">
+
+            <input *ngIf="translate.currentLang === 'en'"
+                   matInput
+                   readonly
+                   value="{{personSecondary.country?.nameAlt}}"
+                   name="country">
+          </mat-form-field>
+
+          <mat-form-field class="col-sm-12 col-lg-2">
+            <mat-label>{{ 'student.secondary.graduationYear' | translate }}</mat-label>
+            <input matInput
+                   readonly
+                   value="{{personSecondary.graduationYear}}"
+                   name="graduationYear">
+          </mat-form-field>
+
+          <mat-form-field *ngIf="personSecondary.school"
+                          class="col-sm-12 col-lg-4">
+            <mat-label>{{ 'student.secondary.school' | translate }}</mat-label>
+            <input matInput
+                   readonly
+                   [title]="personSecondary.school?.name"
+                   value="{{personSecondary.school?.name}}"
+                   name="school">
+          </mat-form-field>
+
+          <mat-form-field *ngIf="!personSecondary.school"
+                          class="col-sm-12 col-lg-4">
+            <mat-label>{{ 'student.secondary.school' | translate }}</mat-label>
+            <input matInput
+                   readonly
+                   value="{{personSecondary.foreignSchoolName}}"
+                   name="school">
+          </mat-form-field>
+
+          <mat-form-field class="col-sm-12 col-lg-3">
+            <mat-label>{{ 'student.secondary.schoolSettlement' | translate }}</mat-label>
+            <input *ngIf="translate.currentLang === 'bg'"
+                   matInput
+                   readonly
+                   value="{{personSecondary.schoolSettlement?.name}}"
+                   name="schoolSettlement">
+
+            <input *ngIf="translate.currentLang === 'en'"
+                   matInput
+                   readonly
+                   value="{{personSecondary.schoolSettlement?.nameAlt}}"
+                   name="schoolSettlement">
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <mat-form-field class="col-sm-12 col-lg-5">
+            <mat-label>{{ 'student.secondary.profession' | translate }}</mat-label>
+            <input matInput
+                   readonly
+                   [title]="personSecondary.profession"
+                   value="{{personSecondary.profession}}"
+                   name="profession">
+          </mat-form-field>
+
+          <mat-form-field class="col-sm-12 col-lg-4">
+            <mat-label>{{ 'student.secondary.diplomaNumber' | translate }}</mat-label>
+            <input matInput
+                   readonly
+                   value="{{personSecondary.diplomaNumber}}"
+                   name="diplomaNumber">
+          </mat-form-field>
+
+          <mat-form-field class="col-sm-12 col-lg-3">
+            <mat-label>{{ 'student.secondary.diplomaDate' | translate }}</mat-label>
+            <input matInput
+                   readonly
+                   [value]="personSecondary.diplomaDate"
+                   [min]="personSecondary.diplomaDate"
+                   [max]="personSecondary.diplomaDate"
+                   [matDatepicker]="picker">
+            <!-- <mat-datepicker-toggle matSuffix
+                                   [for]="picker"></mat-datepicker-toggle> -->
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

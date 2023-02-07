@@ -1,0 +1,74 @@
+<div class="custom-modal">
+  <div class="d-header"
+       *ngIf="canOpen">
+    <div class="containerInfo">
+      <h1 mat-dialog-title
+          class="header">{{ 'user.logHistory.searches' | translate}}</h1>
+      <mat-icon class="infoIcon"
+                matTooltip="{{ 'user.logHistory.searchedFrom' | translate }}"
+                matTooltipPosition="right">info</mat-icon>
+    </div>
+    <button type="button"
+            class="close"
+            aria-label="Close"
+            (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <hr>
+
+  <div class="scrollit"
+       *ngIf="userHistoryLogResult.historyLogs.length !== 0">
+    <table class="table table-hover">
+      <thead>
+        <tr *ngIf="userHistoryLogResult.count !== 0">
+          <th scope="col">{{ 'tables.logHistory.date'| translate}}</th>
+          <th scope="col">{{ 'tables.logHistory.IP'| translate}}</th>
+        </tr>
+      </thead>
+
+      <tbody *ngFor="let log of userHistoryLogResult.historyLogs;let i = index;">
+        <tr>
+          <td>{{log.date | date: 'yyyy/MM/dd HH:mm' }}</td>
+          <td>{{log.ipAddress}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr>
+
+  <div class="bottom">
+    <div *ngIf="userHistoryLogResult.historyLogs.length === 0 && canOpen"
+         style="text-align: center; width: 300px;">
+      {{ 'tables.logHistory.empty' | translate }}
+    </div>
+
+    <div *ngIf="userHistoryLogResult.historyLogs.length !== 0 && this.translate.currentLang=='bg'"
+         class="float-left records">
+      <label>
+        Показани {{this.OFFSET * this.LIMIT > userHistoryLogResult.count? userHistoryLogResult.count : this.OFFSET *
+        this.LIMIT}}
+        от общо {{userHistoryLogResult.count}} записа </label>
+    </div>
+
+    <div *ngIf="userHistoryLogResult.historyLogs.length !== 0 && this.translate.currentLang=='en'"
+         class="float-left records">
+      <label>
+        Showed {{this.OFFSET * this.LIMIT > userHistoryLogResult.count? userHistoryLogResult.count : this.OFFSET *
+        this.LIMIT}}
+        from total {{userHistoryLogResult.count}} records </label>
+    </div>
+
+    <div *ngIf="hasNext"
+         mat-dialog-actions
+         class="float-right show-more-div">
+      <button mat-raised-button
+              color="primary"
+              class="show-more"
+              (click)="loadMore()">{{ 'buttons.showMore' | translate}}
+      </button>
+    </div>
+  </div>
+</div>

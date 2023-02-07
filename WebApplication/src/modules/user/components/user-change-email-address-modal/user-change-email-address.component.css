@@ -1,0 +1,21 @@
+.close:focus {
+  outline: 0;
+}
+
+.d-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+hr {
+  margin: 0px;
+}
+
+.emailFormatting ::ng-deep .mat-form-field-infix {
+  width: 550px !important;
+}
+
+.mat-dialog-content{
+  overflow-x: hidden;
+}

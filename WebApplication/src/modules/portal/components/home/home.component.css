@@ -1,0 +1,87 @@
+.form-control:focus {
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.ng-invalid:not(form) {
+  border: 2px solid #ff9800;
+}
+
+.red {
+  color: #A94442;
+}
+
+::-webkit-input-placeholder,
+:-moz-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder {
+  color: #000;
+}
+
+form label {
+  color: #000;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 300;
+  margin: 10px 0 0;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1em;
+  margin: 10px 0;
+}
+
+.row {
+  justify-content: center;
+}
+
+.search-btn {
+  background-color: #ff9800;
+  color: white;
+  padding: 7px 15px 5px 15px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.search-btn:hover {
+  color: #212529;
+}
+
+.return-btn {
+  background-color: var(--resc-primary-color) !important;
+  color: #ffffff;
+}
+
+.page-content {
+  margin: 7em 1em 1em 1em;
+  height: 90%;
+  max-width: 500px;
+
+  border: 1px solid #d8d8d8;
+  border-radius: 35px;
+  font-weight: 400;
+  padding: 20px 15px;
+
+  background-color: white;
+
+}
+
+@media screen and (max-width: 395px) {
+  .resizer {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}

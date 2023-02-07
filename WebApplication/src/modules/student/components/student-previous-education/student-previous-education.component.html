@@ -1,0 +1,119 @@
+<div class="row">
+  <mat-form-field class="col-sm-12 col-lg-4">
+    <mat-label>{{ 'student.university.previousEducation.type' | translate }}</mat-label>
+    <input *ngIf="translate.currentLang === 'bg'"
+           matInput
+           readonly
+           value={{peTypeLocalization[person?.peType]}}
+           name="type">
+    <input *ngIf="translate.currentLang === 'en'"
+           matInput
+           readonly
+           value={{peTypeLocalizationEn[person?.peType]}}
+           name="type">
+  </mat-form-field>
+  <mat-form-field class="col-sm-12 col-lg-4">
+    <mat-label>{{ 'student.university.previousEducation.highSchoolType' | translate }}</mat-label>
+    <input *ngIf="translate.currentLang === 'bg'"
+           matInput
+           readonly
+           value={{highSchoolLocalization[person?.peHighSchoolType]}}
+           name="highSchoolType">
+    <input *ngIf="translate.currentLang === 'en'"
+           matInput
+           readonly
+           value={{highSchoolLocalizationEn[person?.peHighSchoolType]}}
+           name="highSchoolType">
+  </mat-form-field>
+  <mat-form-field class="col-sm-12 col-lg-4">
+    <mat-label>{{ 'student.university.previousEducation.educationalQualification' | translate }}</mat-label>
+    <input *ngIf="translate.currentLang === 'bg'"
+           matInput
+           readonly
+           value={{person.peEducationalQualification?.name}}
+           name="educationalQualification">
+    <input *ngIf="translate.currentLang === 'en'"
+           matInput
+           readonly
+           value={{person.peEducationalQualification?.nameAlt}}
+           name="educationalQualification">
+  </mat-form-field>
+</div>
+
+<div class="row">
+  <mat-form-field class="col-sm-12 col-lg-4">
+    <mat-label>{{ 'student.university.previousEducation.institution' | translate }}</mat-label>
+    <input *ngIf="translate.currentLang === 'bg'"
+           matInput
+           readonly
+           value={{person.peInstitution?.name}}
+           name="institution">
+    <input *ngIf="translate.currentLang === 'en'"
+           matInput
+           readonly
+           value={{person.peInstitution?.nameAlt}}
+           name="institution">
+  </mat-form-field>
+  <mat-form-field class="col-sm-12 col-lg-4">
+    <mat-label>{{ 'student.university.previousEducation.subordinate' | translate }}</mat-label>
+    <input *ngIf="translate.currentLang === 'bg'"
+           matInput
+           readonly
+           value={{person.peSubordinate?.name}}
+           name="subordinate">
+    <input *ngIf="translate.currentLang === 'en'"
+           matInput
+           readonly
+           value={{person.peSubordinate?.nameAlt}}
+           name="subordinate">
+  </mat-form-field>
+  <mat-form-field class="col-sm-12 col-lg-4">
+    <mat-label>{{ 'student.university.previousEducation.institutionSpeciality' | translate }}</mat-label>
+    <input *ngIf="translate.currentLang === 'bg'"
+           matInput
+           readonly
+           value={{person.peSpeciality?.name}}
+           name="speciality">
+    <input *ngIf="translate.currentLang === 'en'"
+           matInput
+           readonly
+           value={{person.peSpeciality?.nameAlt}}
+           name="speciality">
+  </mat-form-field>
+</div>
+
+<div class="row">
+  <mat-form-field class="col-sm-12 col-lg-6">
+    <mat-label>{{ 'student.university.previousEducation.researchArea' | translate }}</mat-label>
+    <input *ngIf="translate.currentLang === 'bg'"
+           matInput
+           readonly
+           value="{{person.peResearchArea?.code}} {{person.peResearchArea?.name}}"
+           name="researchArea">
+    <input *ngIf="translate.currentLang === 'en'"
+           matInput
+           readonly
+           value="{{person.peResearchArea?.code}} {{person.peResearchArea?.nameAlt}}"
+           name="researchArea">
+  </mat-form-field>
+  <mat-form-field class="col-sm-12 col-lg-3">
+    <mat-label>{{ 'student.university.previousEducation.diplomaNumber' | translate }}</mat-label>
+    <input matInput
+           readonly
+           value={{person?.peDiplomaNumber}}
+           name="diplomaNumber">
+  </mat-form-field>
+  <mat-form-field class="col-sm-12 col-lg-3">
+    <mat-label>{{ 'student.university.previousEducation.diplomaDate' | translate }}</mat-label>
+    <input matInput
+           name="diplomaDate"
+           readonly
+           [value]="person?.peDiplomaDate"
+           [min]="person?.peDiplomaDate"
+           [max]="person?.peDiplomaDate"
+           [matDatepicker]="picker">
+    <!-- <mat-datepicker-toggle matSuffix
+                                     [for]="picker"></mat-datepicker-toggle> -->
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div>

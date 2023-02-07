@@ -1,0 +1,15 @@
+<app-loading-indicator></app-loading-indicator>
+
+<app-header [menuItems]="menuItems"
+            [isLoggedIn]="isLoggedIn"></app-header>
+
+<div [ngClass]="{'main-background': isLoggedIn === false}"
+     [ngStyle]="{'min-height': !isLoggedIn ? '75%' : '68%'}"
+     class="background">
+  <main class="container">
+    <router-outlet></router-outlet>
+  </main>
+</div>
+
+<app-footer [currentYear]="currentYear"
+            [isLoggedIn]="isLoggedIn"></app-footer>

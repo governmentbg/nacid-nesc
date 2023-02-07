@@ -1,0 +1,58 @@
+<button mat-button
+        class="menu-item sidenav-toggler"
+        [ngStyle]="{'color': !isLoggedIn ? '#0E2E50' : '#fff'}"
+        #trigger="matMenuTrigger"
+        (menuOpened)="menuOpened = trigger.menuOpen"
+        (menuClosed)="menuOpened = trigger.menuOpen"
+        [ngClass]="{'menuOpened': menuOpened === true}"
+        [matMenuTriggerFor]="navMenu">
+  <mat-icon>menu</mat-icon>
+</button>
+
+<mat-menu #navMenu="matMenu"
+          xPosition="before">
+
+  <button *ngIf="isLoggedIn"
+          mat-button
+          class="menu-item"
+          style="width: 100%; text-align: left;"
+          [ngClass]="{ 'menu-button': isMobile === true }"
+          (click)="switchTab(0)"
+          routerLink="/student">
+    {{ 'buttons.profile' | translate }}
+  </button>
+
+  <app-menu-items [menuItems]="menuItems"
+                  [isMobile]="true"></app-menu-items>
+
+  <button *ngIf="!isLoggedIn"
+          mat-button
+          class="menu-item menu-button"
+          routerLink="/search">
+    {{ 'portal.menuButton' | translate }}
+  </button>
+
+  <button *ngIf="!isLoggedIn"
+          mat-button
+          class="menu-item menu-button"
+          (click)="switchTab(0)"
+          routerLink="/access">
+    {{ 'user.login.loginButton' | translate }}
+  </button>
+
+  <button *ngIf="!isLoggedIn"
+          mat-button
+          class="menu-item menu-button"
+          (click)="switchTab(1)"
+          routerLink="/access">
+    {{ 'user.register.registerButton' | translate }}
+  </button>
+
+  <div *ngIf="isLoggedIn">
+    <app-user (click)="$event.stopPropagation()"></app-user>
+  </div>
+
+  <app-change-language [isLoggedIn]="isLoggedIn"
+                       [isMobile]="true"></app-change-language>
+
+</mat-menu>

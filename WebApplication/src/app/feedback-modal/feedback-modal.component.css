@@ -1,0 +1,13 @@
+.close:focus {
+  outline: 0;
+}
+
+.d-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+hr {
+  margin: 0px;
+}

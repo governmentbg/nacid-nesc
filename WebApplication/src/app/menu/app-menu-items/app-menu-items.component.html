@@ -1,0 +1,40 @@
+<ng-container *ngFor="let menuItem of menuItems | filter: 'isVisible': true">
+  <ng-container *ngIf="!menuItem.children?.length">
+    <button mat-button
+            class="menu-item"
+            [ngClass]="{ 'menu-button': isMobile === true }"
+            [routerLink]="menuItem.routerLink"
+            routerLinkActive="active-link">
+
+      {{ translate.currentLang === 'bg' ? menuItem.title : menuItem.titleAlt }}
+    </button>
+  </ng-container>
+
+  <ng-container *ngIf="menuItem.children?.length">
+    <button mat-button
+            #trigger="matMenuTrigger"
+            (menuOpened)="menuOpened = trigger.menuOpen"
+            (menuClosed)="menuOpened = trigger.menuOpen"
+            [ngClass]="{ 'menuOpened': menuOpened === true, 'menu-button': isMobile === true, 'menu-item': isLoggedIn === true, 'menu-item-not-logged': isLoggedIn === false }"
+            [matMenuTriggerFor]="servicesMenu"
+            (click)="$event.stopPropagation()">
+      {{
+      translate.currentLang === 'bg' ? menuItem.title :
+      menuItem.titleAlt }}
+
+      <span class="material-icons dropdown-icon">arrow_drop_down</span>
+    </button>
+
+    <mat-menu #servicesMenu="matMenu"
+              xPosition="after">
+      <button *ngFor="let dropdownItem of menuItem.children | filter: 'isVisible': true"
+              mat-menu-item
+              style="font-weight: 600;"
+              [routerLink]="dropdownItem.routerLink">
+        <mat-icon class="menu-dropdown-icon">{{ dropdownItem.icon}}
+        </mat-icon>{{ translate.currentLang === 'bg' ? dropdownItem.title :
+        dropdownItem.titleAlt }}
+      </button>
+    </mat-menu>
+  </ng-container>
+</ng-container>

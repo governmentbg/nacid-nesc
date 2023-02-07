@@ -1,0 +1,10 @@
+:host {
+  display: flex;
+  color: #ffffff;
+}
+
+@media screen and (min-width:1200px) {
+  .sidenav-toggler {
+    display: none;
+  }
+}

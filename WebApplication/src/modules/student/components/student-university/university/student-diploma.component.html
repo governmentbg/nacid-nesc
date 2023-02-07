@@ -1,0 +1,59 @@
+<table mat-table
+       [dataSource]="diplomaDataSource">
+
+  <ng-container matColumnDef="diplomaNumber">
+    <th mat-header-cell
+        class="col-sm-2"
+        *matHeaderCellDef> {{ 'student.university.diploma.diplomaNumber' | translate }} </th>
+    <td mat-cell
+        *matCellDef="let element"> {{element.diplomaNumber}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="registrationDiplomaNumber">
+    <th mat-header-cell
+        class="col-sm-3"
+        *matHeaderCellDef> {{ 'student.university.diploma.registrationDiplomaNumber' | translate }} </th>
+    <td mat-cell
+        *matCellDef="let element"> {{element.registrationDiplomaNumber}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="diplomaDate">
+    <th mat-header-cell
+        class="col-sm-2"
+        *matHeaderCellDef> {{ 'student.university.diploma.diplomaDate' | translate }} </th>
+    <td mat-cell
+        *matCellDef="let element"> {{element.diplomaDate | date:'dd.MM.yyyy' }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="diplomafile">
+    <th mat-header-cell
+        class="col-sm-3"
+        *matHeaderCellDef> {{ 'student.university.diploma.diplomafile' | translate }} </th>
+    <td mat-cell
+        *matCellDef="let element">
+      <app-file-upload #diplomaFile="ngModel"
+                       name="diplomaFile"
+                       [ngModel]="element.file"
+                       [disabled]="true"></app-file-upload>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="isValid">
+    <th mat-header-cell
+        class="col-sm-3"
+        *matHeaderCellDef> {{ 'student.university.diploma.isValid' | translate }} </th>
+    <td mat-cell
+        [ngStyle]="{'color': !element.isValid ? 'red' : 'green'}"
+        *matCellDef="let element">
+      <div *ngIf="translate.currentLang === 'bg'">{{element.isValid ? 'Валидна' : 'Невалидна'}}
+      </div>
+      <div *ngIf="translate.currentLang === 'en'">{{element.isValid ? 'Valid' : 'Invalid'}}
+      </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row
+      *matHeaderRowDef="diplomaColumns"></tr>
+  <tr mat-row
+      *matRowDef="let row; columns: diplomaColumns;"></tr>
+</table>

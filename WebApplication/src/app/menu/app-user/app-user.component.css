@@ -1,0 +1,9 @@
+:host {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.dropdown-icon {
+  margin-left: -3px;
+  margin-bottom: 3px;
+}

@@ -1,0 +1,189 @@
+<mat-expansion-panel class="education-tab mb-4">
+  <mat-expansion-panel-header class="education-info"
+                              style="height: 57px;">
+    <mat-panel-title *ngIf="translate.currentLang === 'bg'">
+      <div class="full-education-info">
+        <div class="subheader">
+          {{ personStudent.institution?.name }} - {{ personStudent.speciality?.name }}, {{
+          personStudent.educationalQualification.name }}, {{ personStudent.educationalForm.name }}, {{
+          personStudent.duration }}г.
+        </div>
+        <ng-container *ngIf="personStudent.studentStatus?.alias !== 'graduated' && personStudent.semesters?.length > 0">
+          <span style="font-weight: bold"
+                [ngClass]="{
+              'text-red': personStudent.semesters[0].studentStatus?.alias === 'interrupted',
+              'text-green': personStudent.semesters[0].studentStatus?.alias === 'active',
+              'text-black': personStudent.semesters[0].studentStatus?.alias !== 'active' && personStudent.semesters[0].studentStatus?.alias !== 'interrupted'}">
+            {{ personStudent.semesters[0].studentStatus?.name }}</span>
+          ({{ personStudent.semesters[0].studentEvent?.name }})
+        </ng-container>
+        <ng-container *ngIf="personStudent.studentStatus?.alias === 'graduated'">
+          <span class="text-black"
+                style="font-weight: bold">
+            {{ personStudent.studentStatus?.name }}</span>
+          ({{ personStudent.studentEvent?.name }})
+        </ng-container>
+      </div>
+
+      <div class="short-education-info">
+        <div class="subheader">
+          {{ personStudent.institution?.name }} - {{ personStudent.educationalQualification.name }}
+        </div>
+      </div>
+      <div class="shortest-education-info">
+        <div class="subheader">
+          ({{ personStudent.institution?.shortName }}) - {{ personStudent.educationalQualification.name }}
+        </div>
+      </div>
+    </mat-panel-title>
+    <mat-panel-title *ngIf="translate.currentLang === 'en'">
+      <div class="full-education-info">
+        <div class="subheader">
+          {{ personStudent.institution?.nameAlt }} - {{ personStudent.speciality?.nameAlt }}, {{
+          personStudent.educationalQualification.nameAlt }}, {{ personStudent.educationalForm.nameAlt }}, {{
+          personStudent.duration }} years
+        </div>
+        <ng-container *ngIf="personStudent.studentStatus?.alias !== 'graduated' && personStudent.semesters?.length > 0">
+          <span style="font-weight: bold"
+                [ngClass]="{
+              'text-red': personStudent.semesters[0].studentStatus?.alias === 'interrupted',
+              'text-green': personStudent.semesters[0].studentStatus?.alias === 'active',
+              'text-black': personStudent.semesters[0].studentStatus?.alias !== 'active' && personStudent.semesters[0].studentStatus?.alias !== 'interrupted'}">
+            {{ personStudent.semesters[0].studentStatus?.nameAlt }}</span>
+          ({{ personStudent.semesters[0].studentEvent?.nameAlt }})
+        </ng-container>
+        <ng-container *ngIf="personStudent.studentStatus?.alias === 'graduated'">
+          <span class="text-black"
+                style="font-weight: bold">
+            {{ personStudent.studentStatus?.nameAlt }}</span>
+          ({{ personStudent.studentEvent?.nameAlt }})
+        </ng-container>
+      </div>
+      <div class="short-education-info">
+        <div class="subheader">
+          {{ personStudent.institution?.nameAlt }} - {{ personStudent.educationalQualification.nameAlt }}
+        </div>
+      </div>
+      <div class="shortest-education-info">
+        <div class="subheader">
+          ({{ personStudent.institution?.shortNameAlt }}) - {{ personStudent.educationalQualification.nameAlt }}
+        </div>
+      </div>
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <form #universityForm="ngForm">
+    <div class="row">
+      <mat-form-field class="col-sm-12 col-lg-4">
+        <mat-label>{{ 'student.university.subordinate' | translate }}</mat-label>
+        <input *ngIf="translate.currentLang === 'bg'"
+               matInput
+               readonly
+               value={{personStudent.subordinate?.name}}
+               name="subordinate">
+        <input *ngIf="translate.currentLang === 'en'"
+               matInput
+               readonly
+               value={{personStudent.subordinate?.nameAlt}}
+               name="subordinate">
+      </mat-form-field>
+
+      <mat-form-field class="col-sm-12 col-lg-8">
+        <mat-label>{{ 'student.university.admissionReason' | translate }}</mat-label>
+        <input *ngIf="translate.currentLang === 'bg'"
+               matInput
+               readonly
+               [title]="personStudent.admissionReason?.name"
+               value={{personStudent.admissionReason?.name}}
+               name="admissionReason">
+        <input *ngIf="translate.currentLang === 'en'"
+               matInput
+               readonly
+               [title]="personStudent.admissionReason?.nameAlt"
+               value={{personStudent.admissionReason?.nameAlt}}
+               name="admissionReason">
+      </mat-form-field>
+    </div>
+
+    <div class="row mb-2">
+      <mat-form-field class="col-sm-12 col-lg-7">
+        <mat-label>{{ 'student.university.institutionSpeciality' | translate }}</mat-label>
+        <input *ngIf="translate.currentLang === 'bg'"
+               matInput
+               readonly
+               [value]="personStudent.speciality?.name + ', ' + personStudent.educationalQualification?.name + ', ' + personStudent.educationalForm?.name + ', ' + personStudent?.duration"
+               name="speciality">
+        <input *ngIf="translate.currentLang === 'en'"
+               matInput
+               readonly
+               [value]="personStudent.speciality?.nameAlt + ', ' + personStudent.educationalQualification?.nameAlt + ', ' + personStudent.educationalForm?.nameAlt + ', ' + personStudent?.duration"
+               name="speciality">
+      </mat-form-field>
+
+      <mat-form-field class="col-sm-12 col-lg-3">
+        <mat-label>{{ 'student.university.qualification' | translate }}</mat-label>
+        <input matInput
+               readonly
+               value={{personStudent?.qualification}}
+               name="qualification">
+      </mat-form-field>
+
+      <mat-form-field class="col-sm-12 col-lg-2">
+        <mat-label>{{ 'student.university.facultyNumber' | translate }}</mat-label>
+        <input matInput
+               readonly
+               value={{personStudent?.facultyNumber}}
+               name="facultyNumber">
+      </mat-form-field>
+    </div>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="child-expansion">
+        <mat-panel-title class="subheader">
+          {{ 'student.university.previousEducation.title' | translate }}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-student-previous-education *ngIf="personStudent.peHighSchoolType !== 3 && personStudent.peType === 2"
+                                      [person]="personStudent">
+      </app-student-previous-education>
+      <app-student-previous-education-abroad *ngIf="personStudent.peHighSchoolType === 3 && personStudent.peType === 2"
+                                             [person]="personStudent">
+      </app-student-previous-education-abroad>
+      <div class="row"
+           *ngIf="personStudent.peType === 1">
+        <!-- <button id="btnChangeTab"
+                (click)="changeTab(1)">{{ personStudent.school?.name }}</button> -->
+
+        <mat-form-field class="col-sm-12">
+          <mat-label>{{ 'student.secondary.school' | translate }}</mat-label>
+          <input matInput
+                 readonly
+                 value="{{ personStudent.school?.name }}, {{ personStudent.schoolSettlement?.name }}"
+                 name="secondarySchool">
+        </mat-form-field>
+      </div>
+    </mat-expansion-panel>
+
+    <ng-container *ngIf="personStudent.semesters?.length > 0">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header class="child-expansion">
+          <mat-panel-title class="subheader">
+            {{ 'student.university.semester.title' | translate }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-student-semester [semesters]="personStudent.semesters"></app-student-semester>
+      </mat-expansion-panel>
+    </ng-container>
+
+    <ng-container *ngIf="personStudent.diploma">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header class="child-expansion">
+          <mat-panel-title class="subheader">
+            {{ 'student.university.diploma.title' | translate }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-student-diploma [personStudentDiploma]="personStudent.diploma"></app-student-diploma>
+      </mat-expansion-panel>
+    </ng-container>
+  </form>
+</mat-expansion-panel>

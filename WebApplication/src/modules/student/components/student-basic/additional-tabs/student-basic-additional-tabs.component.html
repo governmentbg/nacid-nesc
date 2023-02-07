@@ -1,0 +1,193 @@
+<mat-tab-group mat-align-tabs="start"
+               [selectedIndex]="0"
+               class="mt-3">
+
+  <mat-tab label="{{ 'student.additionalTabs.birthPlaceTitle' | translate }}">
+    <div class="mt-4">
+      <mat-form-field *ngIf="personBasic.birthCountry?.code !== missing"
+                      class="col-sm-12 col-lg-3">
+        <mat-label>{{ 'student.additionalTabs.country' | translate }}</mat-label>
+        <input *ngIf="translate.currentLang === 'bg'"
+               matInput
+               readonly
+               value={{personBasic.birthCountry?.name}}
+               name="birthCountry">
+
+        <input *ngIf="translate.currentLang === 'en'"
+               matInput
+               readonly
+               value={{personBasic.birthCountry?.nameAlt}}
+               name="birthCountry">
+      </mat-form-field>
+
+      <mat-form-field *ngIf="personBasic.birthSettlement?.code !== missing"
+                      class="col-sm-12 col-lg-3">
+        <mat-label>{{ 'student.additionalTabs.settlement' | translate }}</mat-label>
+        <input *ngIf="translate.currentLang === 'bg'"
+               matInput
+               readonly
+               value={{personBasic.birthSettlement?.name}}
+               name="birthSettlement">
+
+        <input *ngIf="translate.currentLang === 'en'"
+               matInput
+               readonly
+               value={{personBasic.birthSettlement?.nameAlt}}
+               name="birthSettlement">
+      </mat-form-field>
+
+      <mat-form-field *ngIf="personBasic.birthDistrict?.code !== missing"
+                      class="col-sm-12 col-lg-3">
+        <mat-label>{{ 'student.additionalTabs.district' | translate }}</mat-label>
+        <input *ngIf="translate.currentLang === 'bg'"
+               matInput
+               readonly
+               value={{personBasic.birthDistrict?.name}}
+               name="birthDistrict">
+
+        <input *ngIf="translate.currentLang === 'en'"
+               matInput
+               readonly
+               value={{personBasic.birthDistrict?.nameAlt}}
+               name="birthDistrict">
+      </mat-form-field>
+
+      <mat-form-field *ngIf="personBasic.birthMunicipality?.code !== missing"
+                      class="col-sm-12 col-lg-3">
+        <mat-label>{{ 'student.additionalTabs.municipality' | translate }}</mat-label>
+        <input *ngIf="translate.currentLang === 'bg'"
+               matInput
+               readonly
+               value={{personBasic.birthMunicipality?.name}}
+               name="birthMunicipality">
+
+        <input *ngIf="translate.currentLang === 'en'"
+               matInput
+               readonly
+               value={{personBasic.birthMunicipality?.nameAlt}}
+               name="birthMunicipality">
+      </mat-form-field>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="{{ 'student.additionalTabs.nationalityTitle' | translate }}">
+    <div class="mt-4">
+      <mat-form-field class="col-sm-12 col-lg-3">
+        <mat-label>{{ 'student.additionalTabs.citizenship' | translate }}</mat-label>
+        <input *ngIf="translate.currentLang === 'bg'"
+               matInput
+               readonly
+               value={{personBasic?.citizenshipFull}}
+               name="citizenship">
+
+        <input *ngIf="translate.currentLang === 'en'"
+               matInput
+               readonly
+               value={{personBasic?.citizenshipFullAlt}}
+               name="citizenship">
+      </mat-form-field>
+      <!-- <mat-form-field *ngIf="personBasic.secondCitizenship"
+                                     class="col-sm-12 col-lg-3">
+                            <mat-label>{{ 'student.additionalTabs.secondCitizenship' | translate }}</mat-label>
+                            <input *ngIf="translate.currentLang === 'bg'"
+                                   matInput
+                                   readonly
+                                   value={{personBasic.secondCitizenship?.name}}
+                                   name="secondCitizenship">
+
+                            <input *ngIf="translate.currentLang === 'en'"
+                                   matInput
+                                   readonly
+                                   value={{personBasic.secondCitizenship?.nameAlt}}
+                                   name="secondCitizenship">
+                     </mat-form-field> -->
+    </div>
+  </mat-tab>
+
+  <mat-tab label="{{ 'student.additionalTabs.permanentResidence' | translate }}">
+    <div class="mt-4">
+      <mat-form-field *ngIf="personBasic.residenceCountry?.code !== missing"
+                      class="col-sm-12 col-lg-3">
+        <mat-label>{{ 'student.additionalTabs.country' | translate }}</mat-label>
+        <input *ngIf="translate.currentLang === 'bg'"
+               matInput
+               readonly
+               value={{personBasic.residenceCountry?.name}}
+               name="residenceCountry">
+
+        <input *ngIf="translate.currentLang === 'en'"
+               matInput
+               readonly
+               value={{personBasic.residenceCountry?.nameAlt}}
+               name="residenceCountry">
+      </mat-form-field>
+
+      <mat-form-field *ngIf="personBasic.residenceSettlement?.code !== missing"
+                      class="col-sm-12 col-lg-3">
+        <mat-label>{{ 'student.additionalTabs.settlement' | translate }}</mat-label>
+        <input *ngIf="translate.currentLang === 'bg'"
+               matInput
+               readonly
+               value={{personBasic?.residenceSettlementAndPostCode}}
+               name="residenceSettlement">
+
+        <input *ngIf="translate.currentLang === 'en'"
+               matInput
+               readonly
+               value={{personBasic?.residenceSettlementAndPostCodeAlt}}
+               name="residenceSettlement">
+      </mat-form-field>
+
+      <mat-form-field *ngIf="personBasic.residenceDistrict?.code !== missing"
+                      class="col-sm-12 col-lg-3">
+        <mat-label>{{ 'student.additionalTabs.district' | translate }}</mat-label>
+        <input *ngIf="translate.currentLang === 'bg'"
+               matInput
+               readonly
+               value={{personBasic.residenceDistrict?.name}}
+               name="residenceDistrict">
+
+        <input *ngIf="translate.currentLang === 'en'"
+               matInput
+               readonly
+               value={{personBasic.residenceDistrict?.nameAlt}}
+               name="residenceDistrict">
+      </mat-form-field>
+
+      <mat-form-field *ngIf="personBasic.residenceMunicipality?.code !== missing"
+                      class="col-sm-12 col-lg-3">
+        <mat-label>{{ 'student.additionalTabs.municipality' | translate }}</mat-label>
+        <input *ngIf="translate.currentLang === 'bg'"
+               matInput
+               readonly
+               value={{personBasic.residenceMunicipality?.name}}
+               name="residenceMunicipality">
+
+        <input *ngIf="translate.currentLang === 'en'"
+               matInput
+               readonly
+               value={{personBasic.residenceMunicipality?.nameAlt}}
+               name="residenceMunicipality">
+      </mat-form-field>
+
+      <!-- <mat-form-field *ngIf="personBasic.postCode"
+                                     class="col-sm-12 col-lg-2">
+                            <mat-label>{{ 'student.additionalTabs.postCode' | translate }}</mat-label>
+                            <input matInput
+                                   readonly
+                                   value={{personBasic.postCode}}
+                                   name="postCode">
+                     </mat-form-field> -->
+
+      <mat-form-field *ngIf="personBasic.residenceAddress"
+                      class="col-sm-12 col-lg-10">
+        <mat-label>{{ 'student.additionalTabs.residenceAddress' | translate }}</mat-label>
+        <input matInput
+               readonly
+               value={{personBasic.residenceAddress}}
+               name="residenceAddress">
+      </mat-form-field>
+    </div>
+  </mat-tab>
+
+</mat-tab-group>

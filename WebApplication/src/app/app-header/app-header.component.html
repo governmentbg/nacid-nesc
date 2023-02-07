@@ -1,0 +1,47 @@
+<header style="width:100%"
+        [ngStyle]="{'background-color': !isLoggedIn ? '#fff' : 'var(--studentcard-primary-color'}">
+  <div class="container d-flex align-items-center">
+    <div *ngIf="!isLoggedIn"
+         class="d-flex nav align-items-center">
+      <div class="logo-title-wrapper d-flex align-items-center fit-and-pointer"
+           (click)="routeToHome()">
+        <div class="logo-link">
+          <img src="./../assets/android-chrome-96x96.png">
+        </div>
+
+        <div class="title">
+          <h5>{{ 'common.nacid' | translate }}</h5>
+          <h6>{{ 'common.studentCard' | translate }}</h6>
+        </div>
+      </div>
+
+      <app-menu class="ml-auto d-flex align-items-right"
+                [menuItems]="menuItems"
+                [isLoggedIn]="isLoggedIn"></app-menu>
+    </div>
+
+    <div *ngIf="isLoggedIn"
+         class="d-flex nav align-items-center"
+         style="color: #ffffff;">
+      <div class="logo-title-wrapper d-flex align-items-center fit-and-pointer"
+           (click)="routeToHome()">
+        <div class="logo-link-logged">
+          <img src="./../assets/nacid_logo.png">
+        </div>
+
+        <div class="title-logged">
+          <h5>{{ 'common.nacid' | translate }}</h5>
+          <h6>{{ 'common.studentCard' | translate }}</h6>
+        </div>
+      </div>
+
+      <app-menu class="ml-auto d-flex align-items-right"
+                [menuItems]="menuItems"
+                [isLoggedIn]="isLoggedIn"></app-menu>
+    </div>
+
+    <app-menu-mobile [menuItems]="menuItems"
+                     [isLoggedIn]="isLoggedIn"
+                     [menuOpened]="menuOpened"></app-menu-mobile>
+  </div>
+</header>

@@ -1,0 +1,196 @@
+<div class="custom-panel mt-4">
+  <div class="custom-panel-wrapper">
+    <div class="custom-panel-header">
+      <div class="custom-panel-header-title">
+        {{'student.basic.title' | translate}}
+      </div>
+    </div>
+
+    <div class="custom-panel-body">
+      <form #studentForm="ngForm">
+
+        <div class="row g-3">
+          <div class="col-md-3 pfp">
+            <app-image-select #personImage="ngModel"
+                              name="personImage"
+                              [(ngModel)]="personBasic.personImage"
+                              [image]="personBasic.personImage"
+                              [disabled]="true"
+                              [isLoggedIn]="true"
+                              matTooltip="{{ 'student.basic.missingImg' | translate }}"
+                              [matTooltipDisabled]="personBasic.personImage !== null"
+                              required>
+            </app-image-select>
+
+            <!-- Ако поискат да може да се качва снимка -->
+            <!-- <ng-container *ngIf="!isEditMode">
+              <label class="d-inline-flex">
+                {{ 'application.new.candidate.image' | translate }}
+              </label>
+              <app-file-upload #attachedFile="ngModel"
+                               name="imgFile"
+                               [(ngModel)]="model.imgFile"
+                               [disabled]="!isEditMode"></app-file-upload>
+            </ng-container> -->
+          </div>
+
+          <div class="col-md-9">
+            <div class="row g-3">
+              <mat-form-field class="col-sm-12 col-lg-4">
+                <mat-label>{{ 'student.basic.firstName' | translate }}</mat-label>
+                <input matInput
+                       readonly
+                       value={{personBasic.firstName}}
+                       name="firstName">
+              </mat-form-field>
+
+              <mat-form-field class="col-sm-12 col-lg-4">
+                <mat-label>{{ 'student.basic.middleName' | translate }}</mat-label>
+                <input matInput
+                       readonly
+                       value={{personBasic.middleName}}
+                       name="middleName">
+              </mat-form-field>
+
+              <mat-form-field class="col-sm-12 col-lg-4">
+                <mat-label>{{ 'student.basic.lastName' | translate }}</mat-label>
+                <input matInput
+                       readonly
+                       value={{personBasic.lastName}}
+                       name="lastName">
+              </mat-form-field>
+            </div>
+
+            <div class="row">
+              <mat-form-field class="col-sm-12 col-lg-12">
+                <mat-label>{{ 'student.basic.otherNames' | translate }}</mat-label>
+                <input matInput
+                       readonly
+                       value={{personBasic.otherNames}}
+                       name="otherNames">
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field class="col-sm-12 col-lg-4">
+                <mat-label>{{ 'student.basic.firstNameAlt' | translate }}</mat-label>
+                <input matInput
+                       readonly
+                       value={{personBasic.firstNameAlt}}
+                       name="firstNameAlt">
+              </mat-form-field>
+
+              <mat-form-field class="col-sm-12 col-lg-4">
+                <mat-label>{{ 'student.basic.middleNameAlt' | translate }}</mat-label>
+                <input matInput
+                       readonly
+                       value={{personBasic.middleNameAlt}}
+                       name="middleNameAlt">
+              </mat-form-field>
+
+              <mat-form-field class="col-sm-12 col-lg-4">
+                <mat-label>{{ 'student.basic.lastNameAlt' | translate }}</mat-label>
+                <input matInput
+                       readonly
+                       value={{personBasic.lastNameAlt}}
+                       name="lastNameAlt">
+              </mat-form-field>
+            </div>
+
+            <div class="row">
+              <mat-form-field class="col-sm-12 col-lg-12">
+                <mat-label>{{ 'student.basic.otherNamesAlt' | translate }}</mat-label>
+                <input matInput
+                       readonly
+                       value={{personBasic.otherNamesAlt}}
+                       name="otherNamesAlt">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <mat-form-field class="col-sm-12 col-lg-3">
+            <mat-label>{{ 'student.basic.birthDate' | translate }}</mat-label>
+            <input matInput
+                   readonly
+                   [value]="personBasic.birthDate"
+                   [min]="personBasic.birthDate"
+                   [max]="personBasic.birthDate"
+                   [matDatepicker]="picker">
+            <!-- <mat-datepicker-toggle matSuffix
+                                   [for]="picker"></mat-datepicker-toggle> -->
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field *ngIf="personBasic.uin"
+                          class="col-sm-12 col-lg-3">
+            <mat-label>{{ 'student.basic.uin' | translate }}</mat-label>
+            <input matInput
+                   readonly
+                   value={{personBasic.uin}}
+                   name="uin">
+          </mat-form-field>
+
+          <mat-form-field *ngIf="!personBasic.uin && personBasic.foreignerNumber"
+                          class="col-sm-12 col-lg-3">
+            <mat-label>{{ 'student.basic.foreignerNumber' | translate }}</mat-label>
+            <input matInput
+                   readonly
+                   value={{personBasic.foreignerNumber}}
+                   name="foreignerNumber">
+          </mat-form-field>
+
+          <mat-form-field *ngIf="!personBasic.uin && !personBasic.foreignerNumber && personBasic.idnNumber"
+                          class="col-sm-12 col-lg-3">
+            <mat-label>{{ 'student.basic.idnNumber' | translate }}</mat-label>
+            <input matInput
+                   readonly
+                   value={{personBasic.idnNumber}}
+                   name="idnNumber">
+          </mat-form-field>
+
+          <!-- 
+          <mat-form-field class="col-sm-12 col-lg-3">
+            <mat-label>{{ 'student.basic.gender' | translate }}</mat-label>
+            <input *ngIf="translate.currentLang === 'bg'"
+                   matInput
+                   readonly
+                   value={{genderLocalization[personBasic?.gender]}}
+                   name="gender">
+            <input *ngIf="translate.currentLang === 'en'"
+                   matInput
+                   readonly
+                   value={{genderLocalizationEn[personBasic?.gender]}}
+                   name="gender">
+          </mat-form-field> -->
+
+          <mat-form-field class="col-sm-12 col-lg-3">
+            <mat-label>{{ 'student.basic.email' | translate }}</mat-label>
+            <input matInput
+                   readonly
+                   value={{personBasic.email}}
+                   name="email">
+            <button mat-icon-button
+                    matSuffix>
+              <mat-icon (click)="openChangeEmailAddressDialog()"
+                        style="font-size:18px;">edit</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <mat-form-field class="col-sm-12 col-lg-3">
+            <mat-label>{{ 'student.basic.phoneNumber' | translate }}</mat-label>
+            <input matInput
+                   readonly
+                   value={{personBasic.phoneNumber}}
+                   name="phoneNumber">
+          </mat-form-field>
+        </div>
+
+        <app-student-basic-additional-tabs [personBasic]="personBasic">
+        </app-student-basic-additional-tabs>
+
+      </form>
+    </div>
+  </div>
+</div>

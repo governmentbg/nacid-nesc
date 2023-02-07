@@ -1,0 +1,46 @@
+<ng-container
+              *ngIf="electronicCardInfo.hasActiveSpecialities === true || electronicCardInfo.hasActiveDoctorals === true">
+  <div class="background-image-web"
+       [ngClass]="{'background-image-web-bg': translate.currentLang === 'bg',
+                   'background-image-web-en': translate.currentLang === 'en'}">
+    <div class="content">
+
+      <div class="fullName-container">
+        <div *ngIf="translate.currentLang==='bg'"
+             class="fullName">{{ electronicCardInfo.fullName }}</div>
+        <div *ngIf="translate.currentLang==='en'"
+             class="fullName">{{ electronicCardInfo.fullNameAlt }}</div>
+      </div>
+
+      <div class="qrCode-container">
+        <img class="qrCodeImage"
+             [src]="translate.currentLang === 'bg' ? qrCodeImageBg : qrCodeImageEn">
+      </div>
+    </div>
+
+    <div class="birth-uan-container">
+      <div class="birthDate-container"
+           *ngIf="translate.currentLang==='bg'">
+        {{ electronicCardInfo.birthDate | date:'dd MMMM yyyy':'':'bg' }}
+      </div>
+      <div class="birthDate-container"
+           *ngIf="translate.currentLang==='en'">
+        {{ electronicCardInfo.birthDate | date:'dd MMMM yyyy':'':'en' }}
+      </div>
+      <div class="uan">{{ 'student.uan' | translate }}: {{ electronicCardInfo.uan }}</div>
+    </div>
+  </div>
+
+  <div class="pdf-btn">
+    <button mat-raised-button
+            color="primary"
+            style="font-weight: 700;"
+            (click)="getStudentElectronicCardPdf()">
+      {{ 'electronicCard.pdfBtn' | translate }}
+    </button>
+  </div>
+</ng-container>
+<div *ngIf="electronicCardInfo.hasActiveSpecialities === false && electronicCardInfo.hasActiveDoctorals === false"
+     class="non-active">
+  {{ 'electronicCard.textForNonActive' | translate }}
+</div>

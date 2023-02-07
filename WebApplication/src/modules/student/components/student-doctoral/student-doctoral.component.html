@@ -1,0 +1,13 @@
+<div class="custom-panel mt-4">
+  <div class="custom-panel-wrapper">
+    <div class="custom-panel-header">
+      <div class="custom-panel-header-title">
+        {{ 'student.doctoral.title' | translate }}
+      </div>
+    </div>
+    <div class="custom-panel-body">
+      <app-doctoral *ngFor="let element of personDoctorals"
+                    [personDoctoral]="element"></app-doctoral>
+    </div>
+  </div>
+</div>

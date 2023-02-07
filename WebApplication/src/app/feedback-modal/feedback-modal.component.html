@@ -1,0 +1,80 @@
+<div class="custom-modal">
+  <div class="d-header">
+    <h1 mat-dialog-title>{{ 'footer.feedback.title' | translate}}</h1>
+    <button type="button"
+            class="close"
+            aria-label="Close"
+            (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <hr>
+
+  <div mat-dialog-content>
+    <form #changePassword="ngForm"
+          style="font-size: 14px;">
+      <mat-form-field appearance="outline"
+                      class="mt-3"
+                      style="width: 100%;"
+                      floatLabel="default">
+        <mat-label>{{ 'footer.feedback.email' | translate }}</mat-label>
+        <input type="text"
+               name="email"
+               #email="ngModel"
+               [(ngModel)]="model.email"
+               pattern="{{emailRegex}}"
+               matInput
+               required>
+        <mat-error *ngIf="email.hasError && !email.hasError('required')">
+          {{ 'user.repeatable.invalidInput' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline"
+                      class="mt-1"
+                      style="width: 100%;"
+                      floatLabel="default">
+        <mat-label>{{ 'footer.feedback.topic' | translate }}</mat-label>
+        <input type="text"
+               name="topic"
+               #topic="ngModel"
+               [(ngModel)]="model.topic"
+               maxlength="128"
+               matInput
+               required>
+        <mat-error *ngIf="!email.hasError('required')">
+          {{ 'user.repeatable.invalidInput' | translate }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline"
+                      class="mt-1"
+                      style="width: 100%;"
+                      floatLabel="default">
+        <mat-label>{{ 'footer.feedback.text' | translate }}</mat-label>
+        <textarea type="text"
+                  name="text"
+                  #text="ngModel"
+                  maxlength="256"
+                  [(ngModel)]="model.text"
+                  cdkTextareaAutosize
+                  cdkAutosizeMinRows="1"
+                  matInput
+                  required></textarea>
+      </mat-form-field>
+
+    </form>
+  </div>
+
+  <hr>
+
+  <div mat-dialog-actions
+       class="float-right">
+    <button mat-raised-button
+            color="primary"
+            [disabled]="!email.valid"
+            (click)="sendEmail()">{{ 'footer.feedback.send' | translate }}
+    </button>
+  </div>
+</div>

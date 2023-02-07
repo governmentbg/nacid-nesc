@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.background {
+  flex: 1 0 auto;
+}
+
+.main-background {
+  background-image: url("/assets/background.png");
+}

@@ -1,0 +1,13 @@
+.tab-group {
+  max-width: 560px;
+  margin-inline: auto;
+  margin-top: 7em;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.mat-card {
+  margin-top: 0;
+  box-shadow: none !important;
+}
